@@ -14,7 +14,8 @@ class ProductController extends BaseController
         echo $product;
     }
     public function hakdog(){
-        return view('products');
+        $data['product'] = $this->product->findAll();
+        return view('products', $data);
     }
     public function index()
     {
