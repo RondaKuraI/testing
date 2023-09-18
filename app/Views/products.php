@@ -10,8 +10,24 @@
 </head>
 <body>
 <div class="container mt-3">
-  <h2>Products</h2>
-  <a href="<?= base_url('add') ?>">Add</a>
+  <form action = "/save" method = "post">
+    <label>UPC</label>
+    <input type = "hidden" name = "ID" value = "<?= $pro['ID'] ?>">
+    <input type = "text" name = "UPC" class = "form-control" placeholder = "UPC" value = "<?= $pro['UPC'] ?>">
+    <label>Name</label>
+    <input type = "text" name = "Name" class = "form-control" placeholder = "Name" value = "<?= $pro['Name'] ?>">
+    <label>Quantity</label>
+    <input type = "text" name = "Quantity" class = "form-control" placeholder = "Quantity" value = "<?= $pro['Quantity'] ?>">
+    <label>Price</label>
+    <input type = "text" name = "Price" class = "form-control" placeholder = "Price" value = "<?= $pro['Price'] ?>">
+    <label>Expiry_Date</label>
+    <input type = "date" name = "Expiry_Date" class = "form-control" placeholder = "Expiry Date" value = "<?= $pro['Expiry_Date'] ?>">
+    <br>
+    <button type = "submit" class = "btn btn-primary">Save</button>
+  </form>
+  <br>
+  <h2>Products Listing</h2>
+  <br>
   <table class="table table-dark table-striped">
     <thead>
       <tr>
@@ -36,7 +52,7 @@
                     <td><?= $pr['Expiry_Date'] ?></td>
                     <td><?= $pr['Created_At'] ?></td>
                     <td>
-                      <a href = "/update/<?= $pr['ID']?>">Edit</a>
+                      <a href = "/edit/<?= $pr['ID']?>">Edit</a>
                       <a href = "/delete/<?= $pr['ID']?>">Delete</a>
                     </td>
                 </tr>
